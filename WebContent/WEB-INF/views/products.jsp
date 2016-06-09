@@ -46,40 +46,59 @@
 			</div>
 		</div>
 	</section>
-	<section class="container" ng-app="cartApp" >
-		<div class="row">
-			<c:forEach items="${products}" var="product">
-				<div class="col-sm-6 col-md-3" style="padding-bottom: 15px">
-					<div class="thumbnail">
-						<div class="caption">
-							<h3 align="center">${product.name}</h3>
-							<p align="center"><a 
-								href='<spring:url value="/products/product?id=${product.productId}" />'>
-								<img 
-								src='<c:url value="/resource/images/${product.imageSource[0]}" />'
+	<section class="container" ng-app="cartApp"
+		ng-controller="cartController">
+		<div class="row bar">
+			<input ng-model="query" placeholder="Enter your search terms">
+			Filter by<select ng-model="orderProp">
+				<option value="name">Alphabetical</option>
+				<option value="age">Newest</option>
+
+			</select>
+		</div>
+		<div class="row " >
+
+			<div class="col-sm-6 col-md-3 phone-listing" style="padding-bottom: 15px"
+				ng-repeat="product in products | filter:query | orderBy:orderProp">
+				<div class="thumbnail">
+					<div class="caption">
+						<h3 align="center">{{product.name}}</h3>
+						<p align="center">
+							<a
+								href='<spring:url value="/products/product?id={{product.productId}}" />'>
+								<img
+								src='<c:url value="/resource/images/{{product.imageSource[0]}}" />'
 								alt="image" />
-							</a></p>
-							<c:set var="description"
+							</a>
+						</p>
+						<%-- <c:set var="description"
 								value="${fn:substring(product.description, 0, 100)}" />
 							<p id="description">${description}...<a
 									href='<spring:url value="/products/product?id=${product.productId }"></spring:url>'>read</a>
-							</p>
-							<p><strong>Price: </strong><i style="color: #800000;">${product.unitPrice} USD</i></p>
-							<p><strong>Stock: </strong><i style="color: #800000;">${product.unitsInStock} units</i></p>
-							<p ng-controller="cartController">
-								<a
-									href="<spring:url value="/products/product?id=${product.productId }" />"
-									class="btn btn-primary"> <span
-									class="glyphicon-info-sign glyphicon"> </span> Details
-								</a> <a href="#" class="btn btn-warning btn-large"
-									ng-click="addToCart('${product.productId}')"> <span
-									class="glyphicon-shopping-cart glyphicon"> </span> Order Now
-								</a>
-							</p>
-						</div>
+							</p> --%>
+						<p>
+							<strong>Price: </strong><i style="color: #800000;">{{product.unitPrice}}
+								USD</i>
+						</p>
+						<p>
+							<strong>Stock: </strong><i style="color: #800000;">{{product.unitsInStock}}
+								units</i>
+						</p>
+						<p ng-controller="cartController">
+							<a
+								href="<spring:url value="/products/product?id={{product.productId}}" />"
+								class="btn btn-primary"> <span
+								class="glyphicon-info-sign glyphicon"> </span> Details
+							</a> <a href="#" class="btn btn-warning btn-large"
+								ng-click="addToCart(product.productId)"
+								ng-init="{{product.productId}}"> <span
+								class="glyphicon-shopping-cart glyphicon"> </span> Order Now
+							</a>
+						</p>
 					</div>
 				</div>
-			</c:forEach>
+			</div>
+
 		</div>
 	</section>
 

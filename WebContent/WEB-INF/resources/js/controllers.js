@@ -7,7 +7,17 @@ cartApp.config(['$httpProvider', function($httpProvider) {
 cartApp.controller('cartController', function($scope, $http){
 	$scope.images = [];
 	$scope.mainImageUrl = null
+	$scope.orderProp='age';
+	$scope.products= [];
 	
+	$scope.allProducts = function() {
+		$http.get('/Spring01/rest/products').success(function(data) {
+			$scope.products=data;
+		});
+		
+	};
+	$scope.allProducts();
+
 	$scope.displaySources = function(productId){
 		$http.get('/Spring01/rest/product/'+$scope.productId).success(function(data) {
 			$scope.images=data.imageSource;

@@ -56,7 +56,7 @@
 					<th class="text-center">Price</th>
 					<th class="text-center">Action</th>
 				</tr>
-				<tr ng-repeat="item in cart.cartItems">
+				<tr ng-repeat="item in cart.cartItems" class="phone-listing">
 					<td><img class="thumbnail active"
 						ng-src='<spring:url value="/resource/images/{{item.product.imageSource[0]}}"></spring:url>'></td>
 					<td class="text-uppercase"><em><strong>{{item.product.name}}</strong></em></td>

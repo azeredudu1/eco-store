@@ -3,26 +3,47 @@ package com.packt.webstore.domain;
 import java.math.BigDecimal;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.springframework.web.multipart.MultipartFile;
 
+@Entity
+@Table( name = "product" )
 @XmlRootElement
 public class Product {
+    @Id
+    @Column
     private String              productId;
+    @Column
     private String              name;
+    @Column
     private BigDecimal          unitPrice;
+    @Column
     private String              description;
+    @Column
     private String              manufacturer;
+    @Column
     private String              category;
+    @Column
     private long                unitsInStock;
+    @Column
     private long                unitsInOrder;
+    @Column
     private boolean             discontinued;
+    @Column
     private String              condition;
+    @Transient
+    @ElementCollection( targetClass = String.class )
     private List<String>        imageSource;
-
+    @Transient
     @JsonIgnore
     private List<MultipartFile> productImage;
 
