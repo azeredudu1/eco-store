@@ -26,7 +26,7 @@
 <script src='<c:url value="/resource/js/controllers.js" />'></script>
 <script src='<c:url value="/resource/js/scripts.js" />'></script>
 <script src='<c:url value="/resource/js/animations.js" />'></script>
-
+<script src='<c:url value="/resource/js/dirPagination.js" />'></script>
 </head>
 <body>
 	<section>

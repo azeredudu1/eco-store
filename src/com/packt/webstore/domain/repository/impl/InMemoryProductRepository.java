@@ -21,24 +21,96 @@ public class InMemoryProductRepository implements ProductRepository {
 
     public InMemoryProductRepository() {
 
-        Product dellStreak = new Product( "dellStreak", "Dell-streak-7", new BigDecimal( 500 ) );
-
-        dellStreak
+        Product samsungTransform = new Product( "samsung-transform", "Samsung-transform",
+                new
+                BigDecimal( 300 ) );
+        samsungTransform
                 .setDescription(
-                "Introducing Dell\u2122 Streak 7. Share photos, videos and movies together. It\u2019s small enough to carry around, big enough to gather around. Android\u2122 2.2-based tablet with over-the-air upgrade capability for future OS releases.  A vibrant 7-inch, multitouch display with full Adobe\u00ae Flash 10.1 pre-installed.  Includes a 1.3 MP front-facing camera for face-to-face chats on popular services such as Qik or Skype.  16 GB of internal storage, plus Wi-Fi, Bluetooth and built-in GPS keeps you in touch with the world around you.  Connect on your terms. Save with 2-year contract or flexibility with prepaid pay-as-you-go plans"
+                "Change your perspective.  The Samsung Transform\u2122 is an Android powered device that delivers the truly customizable experience you want your phone to provide.  Enjoy a new and easy way to personalize your device for business or for entertainment, showcasing your own favorite theme and more through the new open software platform and the ability to download individual \u2018Sprint ID Service Packs\u2019 that combine and deliver multiple content items and applications specifically for the features you want.  Combine this with the 3.5\u201d touch display, QWERTY keyboard, high-speed processor, and both a front and rear facing camera to bring your unique mobile experience to life."
                 );
-        dellStreak.setCategory( "Tablet" );
-        dellStreak.setManufacturer(
-                "Dell" );
-        dellStreak.setUnitsInStock( 1000 );
-        List<String> imageSource =
-                new ArrayList<String>();
-        imageSource.add( "dell-streak-7.0.jpg" );
-        imageSource.add( "dell-streak-7.1.jpg" );
-        imageSource.add( "dell-streak-7.2.jpg" );
-        imageSource.add( "dell-streak-7.3.jpg" );
-        imageSource.add( "dell-streak-7.4.jpg" );
-        dellStreak.setImageSource( imageSource );
+        samsungTransform.setCategory( "Smartphone" );
+        samsungTransform.setManufacturer( "Samsung" );
+        samsungTransform.setUnitsInStock( 1000 );
+
+        List<String> imageSource11 = new ArrayList<String>();
+        imageSource11.add( "samsung-transform.0.jpg" );
+        imageSource11.add( "samsung-transform.1.jpg" );
+        imageSource11.add( "samsung-transform.2.jpg" );
+        imageSource11.add( "samsung-transform.3.jpg" );
+        imageSource11.add( "samsung-transform.4.jpg" );
+
+        samsungTransform.setImageSource( imageSource11 );
+
+        Product motorolaDefyWithMotoblur = new Product( "motorola-defy-with-motoblur", "Motorola-Defy-With-Motoblur",
+                new
+                BigDecimal( 300 ) );
+        motorolaDefyWithMotoblur
+                .setDescription(
+                "DEFY with MOTOBLUR is ready for everything life throws your way. It's water-resistant and dustproof, with plenty of entertainment options; and, with MOTOBLUR, it automatically delivers messages and status updates right to your home screen."
+                );
+        motorolaDefyWithMotoblur.setCategory( "Smartphone" );
+        motorolaDefyWithMotoblur.setManufacturer( "Motorola" );
+        motorolaDefyWithMotoblur.setUnitsInStock( 1000 );
+
+        List<String> imageSource10 = new ArrayList<String>();
+        imageSource10.add( "motorola-defy-with-motoblur.0.jpg" );
+        imageSource10.add( "motorola-defy-with-motoblur.1.jpg" );
+        imageSource10.add( "motorola-defy-with-motoblur.2.jpg" );
+
+        motorolaDefyWithMotoblur.setImageSource( imageSource10 );
+
+        Product tMobileMyTouch4g = new Product( "t-mobile-mytouch-4g", "T-Mobile-Mytouch-4g", new
+                BigDecimal( 300 ) );
+        tMobileMyTouch4g
+                .setDescription(
+                "The myTouch 4G lets you connect fast, communicate easily, and share\u2014all on America\u2019s largest 4G network.\n\nBuilt with families in mind, the newest T-Mobile myTouch 4G helps solve the challenges of staying physically and emotionally connected by sharing photos and video with the HD Camcorder, spontaneous face-to-face conversations through Video Chat, and the ability to reach 4G speeds on T-Mobile\u2019s HSPA+ network."
+                );
+        tMobileMyTouch4g.setCategory( "Smartphone" );
+        tMobileMyTouch4g.setManufacturer( "Android" );
+        tMobileMyTouch4g.setUnitsInStock( 1000 );
+
+        List<String> imageSource9 = new ArrayList<String>();
+        imageSource9.add( "t-mobile-mytouch-4g.0.jpg" );
+        imageSource9.add( "t-mobile-mytouch-4g.1.jpg" );
+        imageSource9.add( "t-mobile-mytouch-4g.2.jpg" );
+        imageSource9.add( "t-mobile-mytouch-4g.3.jpg" );
+        imageSource9.add( "t-mobile-mytouch-4g.4.jpg" );
+        imageSource9.add( "t-mobile-mytouch-4g.5.jpg" );
+
+        tMobileMyTouch4g.setImageSource( imageSource9 );
+
+        Product tMobileG2 = new Product( "t-Mobile G2", "T-Mobile G2", new
+                BigDecimal( 300 ) );
+        tMobileG2
+                .setDescription(
+                "The T-Mobile G1 was the world's first Android-powered phone. Launched nearly two years ago, it created an entirely new class of mobile phones and apps. Its successor, the T-Mobile G2 with Google, will continue the revolution.\n\nThe T-Mobile G2 will deliver tight integration with Google services and break new ground as the first smartphone designed to run at 4G speeds on our new HSPA+ network."
+                );
+        tMobileG2.setCategory( "Smartphone" );
+        tMobileG2.setManufacturer( "Android" );
+        tMobileG2.setUnitsInStock( 1000 );
+
+        List<String> imageSource8 = new ArrayList<String>();
+        imageSource8.add( "t-mobile-g2.0.jpg" );
+        imageSource8.add( "t-mobile-g2.1.jpg" );
+        imageSource8.add( "t-mobile-g2.2.jpg" );
+
+        tMobileG2.setImageSource( imageSource8 );
+
+        Product sanyoZio = new Product( "lgAxis", "Sanyo-zio", new
+                BigDecimal( 300 ) );
+        sanyoZio
+                .setDescription(
+                "Zio uses CDMA2000 1xEV-DO rev. A and Wi-Fi technologies and features a 3.5-inch WVGA touch-screen display as a backdrop for a fully customizable mobile multimedia experience.  Along with the touch-screen, a trackball helps users navigate features such as the 3.2 MP camera with video record/playback, media player and full HTML Web browser.  Zio supports up to 32GB through its external microSD memory slot."
+                );
+        sanyoZio.setCategory( "Smartphone" );
+        sanyoZio.setManufacturer( "Lg" );
+        sanyoZio.setUnitsInStock( 1000 );
+
+        List<String> imageSource7 = new ArrayList<String>();
+        imageSource7.add( "sanyo-zio.0.jpg" );
+        imageSource7.add( "sanyo-zio.1.jpg" );
+        imageSource7.add( "sanyo-zio.2.jpg" );
+        sanyoZio.setImageSource( imageSource7 );
 
         Product dellVenue = new Product( "dellVenue", "Dell-venue", new
                 BigDecimal( 700 ) );
@@ -112,6 +184,25 @@ public class InMemoryProductRepository implements ProductRepository {
 
         samsungGalaxyTab.setImageSource( imageSource4 );
 
+        Product dellStreak = new Product( "dellStreak", "Dell-streak-7", new BigDecimal( 500 ) );
+
+        dellStreak
+                .setDescription(
+                "Introducing Dell\u2122 Streak 7. Share photos, videos and movies together. It\u2019s small enough to carry around, big enough to gather around. Android\u2122 2.2-based tablet with over-the-air upgrade capability for future OS releases.  A vibrant 7-inch, multitouch display with full Adobe\u00ae Flash 10.1 pre-installed.  Includes a 1.3 MP front-facing camera for face-to-face chats on popular services such as Qik or Skype.  16 GB of internal storage, plus Wi-Fi, Bluetooth and built-in GPS keeps you in touch with the world around you.  Connect on your terms. Save with 2-year contract or flexibility with prepaid pay-as-you-go plans"
+                );
+        dellStreak.setCategory( "Tablet" );
+        dellStreak.setManufacturer(
+                "Dell" );
+        dellStreak.setUnitsInStock( 1000 );
+        List<String> imageSource =
+                new ArrayList<String>();
+        imageSource.add( "dell-streak-7.0.jpg" );
+        imageSource.add( "dell-streak-7.1.jpg" );
+        imageSource.add( "dell-streak-7.2.jpg" );
+        imageSource.add( "dell-streak-7.3.jpg" );
+        imageSource.add( "dell-streak-7.4.jpg" );
+        dellStreak.setImageSource( imageSource );
+
         Product samsungGem = new Product( "samsungGem", "Samsung-gem", new
                 BigDecimal( 300 ) );
         samsungGem
@@ -145,31 +236,19 @@ public class InMemoryProductRepository implements ProductRepository {
         imageSource6.add( "lg-axis.2.jpg" );
 
         lgAxis.setImageSource( imageSource6 );
-
-        Product sanyoZio = new Product( "lgAxis", "Sanyo-zio", new
-                BigDecimal( 300 ) );
-        sanyoZio
-                .setDescription(
-                "Zio uses CDMA2000 1xEV-DO rev. A and Wi-Fi technologies and features a 3.5-inch WVGA touch-screen display as a backdrop for a fully customizable mobile multimedia experience.  Along with the touch-screen, a trackball helps users navigate features such as the 3.2 MP camera with video record/playback, media player and full HTML Web browser.  Zio supports up to 32GB through its external microSD memory slot."
-                );
-        sanyoZio.setCategory( "Smartphone" );
-        sanyoZio.setManufacturer( "Lg" );
-        sanyoZio.setUnitsInStock( 1000 );
-
-        List<String> imageSource7 = new ArrayList<String>();
-        imageSource7.add( "sanyo-zio.0.jpg" );
-        imageSource7.add( "sanyo-zio.1.jpg" );
-        imageSource7.add( "sanyo-zio.2.jpg" );
-        sanyoZio.setImageSource( imageSource7 );
-
+        listOfProducts.add( samsungTransform );
+        listOfProducts.add( motorolaDefyWithMotoblur );
+        listOfProducts.add( tMobileG2 );
+        listOfProducts.add( tMobileMyTouch4g );
         listOfProducts.add( dellStreak );
-        listOfProducts.add( dellVenue );
-        listOfProducts.add( motorolaAtrix4g );
-        listOfProducts.add( nexusS );
-        listOfProducts.add( samsungGalaxyTab );
-        listOfProducts.add( samsungGem );
-        listOfProducts.add( lgAxis );
         listOfProducts.add( sanyoZio );
+        listOfProducts.add( motorolaAtrix4g );
+        listOfProducts.add( dellVenue );
+        listOfProducts.add( samsungGem );
+        listOfProducts.add( nexusS );
+        listOfProducts.add( lgAxis );
+        listOfProducts.add( samsungGalaxyTab );
+
     }
 
     @Override

@@ -1,21 +1,34 @@
-var cartApp = angular.module('cartApp', ['phonecatAnimations']);
+var cartApp = angular.module('cartApp', ['phonecatAnimations', 'angularUtils.directives.dirPagination']);
 cartApp.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }
 ]);
-cartApp.controller('cartController', function($scope, $http){
-	$scope.images = [];
-	$scope.mainImageUrl = null
-	$scope.orderProp='age';
-	$scope.products= [];
-	
-	$scope.allProducts = function() {
-		$http.get('/Spring01/rest/products').success(function(data) {
-			$scope.products=data;
-		});
+cartApp.filter('strLimit', ['$filter', function($filter) {
+	   return function(input, limit) {
+		     if (! input) return;
+		     if (input.length <= limit) {
+		          return input;
+		      }
+		    
+		      return $filter('limitTo')(input, limit) + '......';
+		   };
+		}]);
+	cartApp.controller('cartController', function($scope, $http){
+		$scope.images = [];
+		$scope.mainImageUrl = null
+		$scope.orderProp='age';
+		$scope.products= [];
 		
-	};
+		$scope.currentPage = 1;
+		$scope.pageSize = 5;
+		
+		$scope.allProducts = function() {
+			$http.get('/Spring01/rest/products').success(function(data) {
+				$scope.products=data;
+			});
+			
+		};
 	$scope.allProducts();
 
 	$scope.displaySources = function(productId){
@@ -70,3 +83,22 @@ cartApp.controller('cartController', function($scope, $http){
 			};
 	
 	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

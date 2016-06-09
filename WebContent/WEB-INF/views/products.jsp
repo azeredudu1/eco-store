@@ -24,6 +24,7 @@
 <script src='<c:url value="/resource/js/controllers.js" />'></script>
 <script src='<c:url value="/resource/js/scripts.js" />'></script>
 <script src='<c:url value="/resource/js/animations.js" />'></script>
+<script src='<c:url value="/resource/js/dirPagination.js" />'></script>
 
 <title>Products</title>
 </head>
@@ -56,13 +57,15 @@
 
 			</select>
 		</div>
-		<div class="row " >
+		<div class="row ">
 
-			<div class="col-sm-6 col-md-3 phone-listing" style="padding-bottom: 15px"
-				ng-repeat="product in products | filter:query | orderBy:orderProp">
+			<div class="col-sm-6 col-md-3 phone-listing"
+				style="padding-bottom: 15px"
+				dir-paginate="product in products | filter:query | orderBy:orderProp | itemsPerPage: 8 "
+				current-page="currentPage">
 				<div class="thumbnail">
 					<div class="caption">
-						<h3 align="center">{{product.name}}</h3>
+						<h3 align="center" style="color: #000080">{{product.name}}</h3>
 						<p align="center">
 							<a
 								href='<spring:url value="/products/product?id={{product.productId}}" />'>
@@ -76,6 +79,10 @@
 							<p id="description">${description}...<a
 									href='<spring:url value="/products/product?id=${product.productId }"></spring:url>'>read</a>
 							</p> --%>
+						<p>
+							{{product.description | strLimit: 100 }}<a
+								href='<spring:url value="/products/product?id={{product.productId}}"></spring:url>'>read</a>
+						</p>
 						<p>
 							<strong>Price: </strong><i style="color: #800000;">{{product.unitPrice}}
 								USD</i>
@@ -100,6 +107,8 @@
 			</div>
 
 		</div>
+
+		<div align="center"><dir-pagination-controls></dir-pagination-controls></div>
 	</section>
 
 </body>
